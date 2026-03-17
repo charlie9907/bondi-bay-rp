@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Fire Service | Bondi Bay Roleplay</title>
+    <style>
+        :root { --bg: #ffffff; --text: #111111; --accent: #0070f3; --card: #f9f9f9; --border: #eee; }
+        .dark-theme { --bg: #0a0a0a; --text: #ffffff; --accent: #3291ff; --card: #161616; --border: #333; }
+        body { background: var(--bg); color: var(--text); font-family: -apple-system, sans-serif; margin: 0; transition: 0.3s; }
+        nav { display: flex; justify-content: space-between; padding: 25px 10%; align-items: center; border-bottom: 1px solid var(--border); }
+        .container { padding: 60px 10%; max-width: 800px; margin: 0 auto; }
+        .back-link { text-decoration: none; color: var(--accent); font-weight: bold; margin-bottom: 20px; display: inline-block; }
+        #theme-toggle { cursor: pointer; background: var(--text); color: var(--bg); border: none; padding: 10px 20px; border-radius: 30px; font-weight: bold; }
+        .content-box { background: var(--card); padding: 40px; border-radius: 25px; border: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="departments.html" style="text-decoration:none; color:var(--text); font-weight:900;">Bondi Bay Roleplay</a>
+        <button id="theme-toggle" onclick="toggleMode()">Theme</button>
+    </nav>
+    <div class="container">
+        <a href="departments.html" class="back-link">← Back to Departments</a>
+        <div class="content-box">
+            <h1 style="font-size: 2.5rem; margin-top: 0;">Rural Fire Service</h1>
+            <p style="font-size: 1.1rem; line-height: 1.6; opacity: 0.8;">
+                Welcome to the official portal for this department. Here you will find information regarding 
+                our operations, chain of command, and application requirements.
+            </p>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 30px 0;">
+            <h3>Recruitment Status: <span style="color: #2ecc71;">Open</span></h3>
+            <p>Requirements: 14+, Working Microphone, Discord Access.</p>
+        </div>
+    </div>
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+        if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-theme');
+    </script>
+</body>
+</html>
