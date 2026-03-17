@@ -1,31 +1,142 @@
-<div class="grid">
-    <div class="card">
-        <div class="badge">FEDERAL</div>
-        <h2>AFP</h2>
-        <p>Australian Federal Police operations.</p>
-        <a href="/afp" class="btn">Visit Branch</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Departments | Bondi Bay Roleplay</title>
+    <style>
+        :root { --bg: #ffffff; --text: #111111; --accent: #0070f3; --card: #f9f9f9; --border: #eee; }
+        .dark-theme { --bg: #0a0a0a; --text: #ffffff; --accent: #3291ff; --card: #161616; --border: #333; }
+        
+        body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; transition: 0.3s; line-height: 1.5; }
+        
+        nav { display: flex; justify-content: space-between; padding: 25px 10%; align-items: center; border-bottom: 1px solid var(--border); }
+        .logo { text-decoration: none; color: var(--text); font-weight: 900; font-size: 1.2rem; letter-spacing: -1px; }
+        
+        .container { padding: 80px 10%; max-width: 1200px; margin: 0 auto; }
+        header { text-align: center; margin-bottom: 60px; }
+        header h1 { font-size: 3.5rem; font-weight: 900; margin: 0; letter-spacing: -2px; }
+        header p { font-size: 1.2rem; opacity: 0.6; margin-top: 10px; }
+
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+        }
+
+        .card { 
+            background: var(--card); 
+            border: 1px solid var(--border); 
+            padding: 40px; 
+            border-radius: 28px; 
+            position: relative; 
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover { 
+            transform: translateY(-10px); 
+            border-color: var(--accent);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.06);
+        }
+
+        .badge { 
+            align-self: flex-start;
+            padding: 6px 12px; 
+            border-radius: 8px; 
+            font-size: 0.65rem; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            background: var(--accent);
+            color: white;
+        }
+
+        .card h2 { font-size: 1.8rem; margin: 0 0 10px 0; font-weight: 800; letter-spacing: -0.5px; }
+        .card p { opacity: 0.7; font-size: 1rem; margin-bottom: 30px; flex-grow: 1; }
+
+        .btn { 
+            display: block; 
+            padding: 16px; 
+            background: var(--accent); 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 16px; 
+            font-weight: 700; 
+            text-align: center; 
+            transition: 0.2s;
+        }
+
+        .btn:hover { opacity: 0.9; transform: scale(0.98); }
+
+        #theme-toggle { cursor: pointer; background: var(--text); color: var(--bg); border: none; padding: 10px 20px; border-radius: 30px; font-weight: bold; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .container { padding: 40px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="logo">Bondi Bay</a>
+        <button id="theme-toggle" onclick="toggleMode()">Theme</button>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Departments</h1>
+            <p>Serving the community of Bondi Bay with pride.</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <div class="badge" style="background: #004a99;">Federal Police</div>
+                <h2>AFP</h2>
+                <p>Leading the fight against complex, transnational, and serious crime within the territory.</p>
+                <a href="/afp" class="btn">Visit Branch</a>
+            </div>
+
+            <div class="card">
+                <div class="badge" style="background: #2ecc71;">Medical</div>
+                <h2>NSWAS</h2>
+                <p>Dedicated medical professionals delivering high-quality emergency care and transport.</p>
+                <a href="/nswas" class="btn">Visit Branch</a>
+            </div>
+
+            <div class="card">
+                <div class="badge" style="background: #e67e22;">Fire Service</div>
+                <h2>RFS</h2>
+                <p>The world's largest volunteer firefighting service, protecting the rural landscape of the Bay.</p>
+                <a href="/rfs" class="btn">Visit Branch</a>
+            </div>
+
+            <div class="card">
+                <div class="badge" style="background: #f1c40f; color: #000;">Emergency</div>
+                <h2>SES</h2>
+                <p>Volunteer-based organization providing assistance during floods, storms, and disasters.</p>
+                <a href="/ses" class="btn">Visit Branch</a>
+            </div>
+
+            <div class="card">
+                <div class="badge" style="background: #95a5a6;">Government</div>
+                <h2>Council</h2>
+                <p>The heartbeat of local governance, maintaining the beauty and infrastructure of Bondi.</p>
+                <a href="/council" class="btn">Visit Branch</a>
+            </div>
+        </div>
     </div>
-    <div class="card">
-        <div class="badge" style="background:#2ecc71;">MEDICAL</div>
-        <h2>NSWAS</h2>
-        <p>New South Wales Ambulance Service.</p>
-        <a href="/nswas" class="btn">Visit Branch</a>
-    </div>
-    <div class="card">
-        <div class="badge" style="background:#e67e22;">FIRE</div>
-        <h2>RFS</h2>
-        <p>NSW Rural Fire Service.</p>
-        <a href="/rfs" class="btn">Visit Branch</a>
-    </div>
-    <div class="card">
-        <div class="badge" style="background:#f1c40f; color:#000;">RESCUE</div>
-        <h2>SES</h2>
-        <p>State Emergency Service.</p>
-        <a href="/ses" class="btn">Visit Branch</a>
-    </div>
-    <div class="card">
-        <h2>Council</h2>
-        <p>Local Bondi Council governance.</p>
-        <a href="/council" class="btn">Visit Branch</a>
-    </div>
-</div>
+
+    <script>
+        function toggleMode() {
+            document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+        if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark-theme');
+    </script>
+</body>
+</html>
